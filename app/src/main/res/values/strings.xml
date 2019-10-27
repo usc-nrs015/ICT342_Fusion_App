@@ -3,14 +3,14 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Fusion</string>
-    <string name="nav_header_subtitle">The Fusion Begins Here</string>
+    <string name="nav_header_subtitle">Display Name Goes Here</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Top Genres</string>
-    <string name="menu_slideshow">Top Artists</string>
-    <string name="menu_tools">Top Tracks</string>
+    <string name="menu_gallery">Top Artists</string>
+    <string name="menu_slideshow">Top Tracks</string>
+    <string name="menu_tools">Top Genres</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 </resources>

@@ -10,17 +10,18 @@ import com.team2.android.fusionapp.TopArtist;
 import com.team2.android.fusionapp.TopTrack;
 import com.team2.android.fusionapp.UserDataLab;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class HomeViewModel extends AndroidViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<ArrayList<String>> mText;
     private UserDataLab mUserDataLab = UserDataLab.get(getApplication().getApplicationContext());
 
     public HomeViewModel(Application application) {
         super(application);
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        /*mText.setValue("This is home fragment");
 
         StringBuilder filteredText = new StringBuilder();
 
@@ -45,10 +46,15 @@ public class HomeViewModel extends AndroidViewModel {
             filteredText.append(String.format("Genre: %s, Weighting: %s \n", key, value));
         }
 
-        mText.setValue(filteredText.toString());
+        mText.setValue(filteredText.toString());*/
+        ArrayList<String> temp = new ArrayList<String>();
+        temp.add(mUserDataLab.getTopArtists().get(0).getName());
+        temp.add(mUserDataLab.getTopTracks().get(0).getName());
+        temp.add(mUserDataLab.getSortedTopGenres().firstKey());
+        mText.setValue(temp);
     }
 
-    public LiveData<String> getText() {
+    public LiveData<ArrayList<String>> getText() {
         return mText;
     }
 }

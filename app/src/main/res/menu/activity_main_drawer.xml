@@ -14,7 +14,7 @@
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_Desc"
+            android:icon="@drawable/ic_circle"
             android:title="@string/menu_slideshow" />
         <item
             android:id="@+id/nav_tools"

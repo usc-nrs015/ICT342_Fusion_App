@@ -14,6 +14,8 @@ import android.arch.lifecycle.ViewModelProviders;
 
 import com.team2.android.fusionapp.R;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
@@ -23,13 +25,15 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        textView.setTypeface(Typeface.DEFAULT);
-        textView.setTextSize(12);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        final TextView textViewArtist = root.findViewById(R.id.topArtistName);
+        final TextView textViewTrack = root.findViewById(R.id.topTrackName);
+        final TextView textViewGenre = root.findViewById(R.id.topGenreName);
+        homeViewModel.getText().observe(this, new Observer<ArrayList<String>>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onChanged(@Nullable ArrayList<String> s) {
+                textViewArtist.setText(s.get(0));
+                textViewTrack.setText(s.get(1));
+                textViewGenre.setText(s.get(2));
             }
         });
         return root;

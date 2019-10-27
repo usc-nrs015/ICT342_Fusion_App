@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="?attr/colorPrimary"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_slideshow"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:fontFamily="@font/pacifico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/topGenreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/pacifico"
+                android:text="My Top Tracks"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/topTracksList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="49dp"
+                android:layout_marginEnd="10dp"
+                android:lineSpacingExtra="8sp"
+                android:text="TextView"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <WebView
+                android:id="@+id/topTracksGraph"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
